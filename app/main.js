@@ -13,8 +13,11 @@ const imgDir = path.join(__dirname, 'othersource')
 //用户自己提供下载目录
 let downloadDir;
 //应用内的下载目录
-let appDownload = path.join(__dirname, config.download_dir);
 let writeStream;
+
+//获取应用程序所在的目录
+const appDir = path.dirname(app.getPath('exe'));
+
 
 // let localPicBuffer = fs.readFileSync(path.join(__dirname,'./1.jpg'));
 // let localPicStream = fs.createReadStream(path.join(__dirname,'./1.jpg'));
@@ -136,7 +139,7 @@ function initWebContentEvent() {
         let fileNameArr = fileName.split('.');
         let ext = fileNameArr[fileNameArr.length - 1];
         console.log('download file ext : ' + ext);
-        let downloadFilePath = path.join(appDownload, uuid() + '.' + ext);
+        let downloadFilePath = path.join(appDir,config.download_dir, uuid() + '.' + ext);
         console.log('downloadFilePath:' + downloadFilePath);
 
         webLog('electron will-download set downloadFlePath......' + downloadFilePath)

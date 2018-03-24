@@ -1,0 +1,23 @@
+{
+  "name": "electron-system-client",
+  "version": "1.0.0",
+  "description": "A window app with window api build in electron",
+  "main": "app/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ./app/main.js",
+    "packager": "electron-packager . image-preview-client --platform=win32 --arch=x64 --electron-version=1.7.6  --app-version=1.0.0 --asar --overwrite --out=./build --ignore=./scripts --ignore=./.idea"
+  },
+  "author": "Mingtao Lou",
+  "license": "ISC",
+  "dependencies": {
+    "ffi": "^2.2.0",
+    "request": "^2.85.0",
+    "uuid": "^3.2.1"
+  },
+  "devDependencies": {
+    "electron": "^1.7.6",
+    "electron-packager": "^11.1.0",
+    "electron-rebuild": "^1.7.3"
+  }
+}
